@@ -1,3 +1,4 @@
+import re
 from urllib.request import urlopen
 
 from bs4 import BeautifulSoup
@@ -10,5 +11,5 @@ bs_obj = BeautifulSoup(html, 'html.parser')
 # print(bs_obj.title)
 # print(bs_obj.h1.get_text())
 
-for link in bs_obj.find_all('a'):
+for link in bs_obj.find_all(href=re.compile('ca/gene_fams/')):
     print(link)
