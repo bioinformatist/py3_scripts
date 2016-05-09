@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+__author__ = 'Yu Sun'
+
 import os
 import re
 import sys
@@ -27,7 +30,6 @@ def get_super_families():
             absolute_link = 'http://rice.plantbiology.msu.edu' + relative_family_link.attrs.get('href')
             family_list.setdefault(superfamily_name, {})
             family_list[superfamily_name][family_name] = absolute_link
-            # family_list[superfamily_name].append(absolute_link)
 
 
 def get_family_info(**kwargs):
