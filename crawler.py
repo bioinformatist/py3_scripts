@@ -16,8 +16,10 @@ family_list = {}
 
 
 def get_super_families():
-    '''Get a nested dictionary containing the relation among superfamilies, families and their absolute links.
-    Create folders as superfamily names.'''
+    '''
+    Get a nested dictionary containing the relation among superfamilies, families and their absolute links.
+    Create folders as superfamily names.
+    '''
     global family_list
     url = 'http://rice.plantbiology.msu.edu/annotation_community_families.shtml'
     html = urlopen(url)
@@ -36,8 +38,10 @@ def get_super_families():
 
 
 def get_family_info(**kwargs):
-    '''Create text files as family names.
-    Get gene id, description and annotation from children nodes, then write them into files.'''
+    '''
+    Create text files as family names.
+    Get gene id, description and annotation from children nodes, then write them into files.
+    '''
     for k, v in kwargs.items():
         main_path = os.path.split(os.path.realpath(sys.argv[0]))[0]
         current_path = os.path.join(main_path, k)
